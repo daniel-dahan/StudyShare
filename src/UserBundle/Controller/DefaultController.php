@@ -24,16 +24,24 @@ class DefaultController extends Controller
     /**
      * @Route("/student", name="student")
      */
+<<<<<<< HEAD
     public function studentAction()
+=======
+    public function studentfAction()
+>>>>>>> origin/master
     {
-        return $this->render('UserBundle:Studyview:index.html.twig');
+        return $this->render('UserBundle:Studyview:student.html.twig');
     }
     /**
      * @Route("/teacher", name="teacher")
      */
+<<<<<<< HEAD
     public function teacherAction()
+=======
+    public function teachertAction()
+>>>>>>> origin/master
     {
-        return $this->render('UserBundle:Studyview:index-prof.html.twig');
+        return $this->render('UserBundle:Studyview:teacher.html.twig');
     }
     /**
      * @Route("/post_subject", name="post_subject")
