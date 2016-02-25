@@ -26,4 +26,14 @@ src/UserBundle/Resources/views/layout.html.twig
 app/config/parameters.yml.dist
 app/config/security.yml
 src/UserBundle/Resources/views/Default/index.html.twig
+<<<<<<< HEAD
 src/UserBundle/Controller/DefaultController.php
+=======
+
+src/UserBundle/Resources/views/studyview/index.html.twig
+
+src/UserBundle/Resources/views/Default/index.html.twig
+
+src/UserBundle/Resources/views/studyview/index.html.twig
+>>>>>>> 37de1e1e52e0f10ca94de7c2268f74d4c7def502
+.idea/StudyShare.iml
