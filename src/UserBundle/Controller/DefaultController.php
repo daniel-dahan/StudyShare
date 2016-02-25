@@ -35,5 +35,12 @@ class DefaultController extends Controller
     {
         return $this->render('UserBundle:Studyview:index-prof.html.twig');
     }
+    /**
+     * @Route("/post_subject", name="post_subject")
+     */
+    public function postsubjectAction()
+    {
+        return $this->render('UserBundle:Studyview:add-cour.html.twig');
+    }
 
 }
