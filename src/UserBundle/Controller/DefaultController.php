@@ -12,14 +12,14 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('UserBundle:Default:index.html.twig');
+        return $this->render('UserBundle:Default:student.html.twig');
     }
     /**
      * @Route("/home", name="home")
      */
     public function homeAction()
     {
-        return $this->render('UserBundle:Studyview:index.html.twig');
+        return $this->render('UserBundle:Studyview:student.html.twig');
     }
     /**
      * @Route("/student", name="student")
