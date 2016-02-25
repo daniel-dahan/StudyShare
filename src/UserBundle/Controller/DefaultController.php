@@ -12,7 +12,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('UserBundle:Default:loging.html.twig');
+        return $this->render('UserBundle:Studyview:login.html.twig');
     }
     /**
      * @Route("/home", name="home")
@@ -28,7 +28,7 @@ class DefaultController extends Controller
     public function studentAction()
 
     {
-        return $this->render('UserBundle:Studyview:teac.html.twig');
+        return $this->render('UserBundle:Studyview:student.html.twig');
     }
     /**
      * @Route("/teacher", name="teacher")
