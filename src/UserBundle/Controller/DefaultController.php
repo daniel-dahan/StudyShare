@@ -26,7 +26,6 @@ class DefaultController extends Controller
     /**
      * @Route("/student", name="student")
      */
-
     public function studentAction()
 
     {
@@ -36,7 +35,6 @@ class DefaultController extends Controller
     /**
      * @Route("/teacher", name="teacher")
      */
-
     public function teachertAction()
 
     {
