@@ -14,4 +14,26 @@ class DefaultController extends Controller
     {
         return $this->render('UserBundle:Default:index.html.twig');
     }
+    /**
+     * @Route("/home", name="home")
+     */
+    public function homeAction()
+    {
+        return $this->render('UserBundle:Studyview:index.html.twig');
+    }
+    /**
+     * @Route("/student", name="student")
+     */
+    public function teacherfAction()
+    {
+        return $this->render('UserBundle:Studyview:index.html.twig');
+    }
+    /**
+     * @Route("/teacher", name="teacher")
+     */
+    public function studentAction()
+    {
+        return $this->render('UserBundle:Studyview:index-prof.html.twig');
+    }
+
 }
