@@ -26,3 +26,4 @@ src/UserBundle/Resources/views/layout.html.twig
 app/config/parameters.yml.dist
 app/config/security.yml
 src/UserBundle/Resources/views/Default/index.html.twig
+src/UserBundle/Controller/DefaultController.php
