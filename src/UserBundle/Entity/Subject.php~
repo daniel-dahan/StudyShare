@@ -116,34 +116,4 @@ class Subject
     {
         return $this->comments;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add comments
-     *
-     * @param \UserBundle\Entity\Subject $comments
-     * @return Subject
-     */
-    public function addComment(\UserBundle\Entity\Subject $comments)
-    {
-        $this->comments[] = $comments;
-
-        return $this;
-    }
-
-    /**
-     * Remove comments
-     *
-     * @param \UserBundle\Entity\Subject $comments
-     */
-    public function removeComment(\UserBundle\Entity\Subject $comments)
-    {
-        $this->comments->removeElement($comments);
-    }
 }
