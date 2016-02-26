@@ -66,9 +66,9 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/subject_change", name="subject_change")
+     * @Route("/subject", name="subject")
      */
-    public function pwdChangeAction()
+    public function subjectAction()
     {
         return $this->render('UserBundle:Studyview:view-cour.html.twig');
     }
