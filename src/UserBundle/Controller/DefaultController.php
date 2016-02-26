@@ -16,14 +16,6 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/home", name="home")
-     */
-    public function homeAction()
-    {
-        return $this->render('UserBundle:Studyview:student.html.twig');
-    }
-
-    /**
      * @Route("/student", name="student")
      */
     public function studentAction()
@@ -35,7 +27,7 @@ class DefaultController extends Controller
     /**
      * @Route("/teacher", name="teacher")
      */
-    public function teachertAction()
+    public function teacherAction()
 
     {
         return $this->render('UserBundle:Studyview:teacher.html.twig');
@@ -44,7 +36,23 @@ class DefaultController extends Controller
     /**
      * @Route("/post_subject", name="post_subject")
      */
-    public function postsubjectAction()
+    public function postSubjectAction()
+    {
+        return $this->render('UserBundle:Studyview:add-cour.html.twig');
+    }
+
+    /**
+     * @Route("/register", name="register")
+     */
+    public function registerAction($admin)
+    {
+        return $this->render('UserBundle:Studyview:add-cour.html.twig');
+    }
+
+    /**
+     * @Route("/register/{admin}", name="register")
+     */
+    public function addCommAction()
     {
         return $this->render('UserBundle:Studyview:add-cour.html.twig');
     }
