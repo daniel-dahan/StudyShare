@@ -1,0 +1,29 @@
+<?php
+
+/*
+ * This file is part of the FOSUserBundle package.
+ *
+ * (c) FriendsOfSymfony <http://friendsofsymfony.github.com/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace UserBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity(repositoryClass="Blogger\BlogBundle\Repository\BlogRepository")
+ * @ORM\Table(name="blog")
+ * @ORM\HasLifecycleCallbacks()
+ */
+class Blog
+{
+    public function getBlog($length = null)
+    {
+        if (false === is_null($length) && $length > 0)
+            return substr($this->blog, 0, $length);
+        else
+            return $this->blog;
+    }
+}
