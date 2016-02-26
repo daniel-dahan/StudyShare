@@ -74,7 +74,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/register", name="register")
+     * @Route("/register{admin}", name="register")
      */
     public function registerAction($admin)
     {
