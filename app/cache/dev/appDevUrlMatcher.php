@@ -167,10 +167,35 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             // subject_modify
-            if ($pathinfo === '/subject_modify') {
-                return array (  '_controller' => 'UserBundle\\Controller\\DefaultController::subjectModifyAction',  '_route' => 'subject_modify',);
+            if (0 === strpos($pathinfo, '/subject_modify') && preg_match('#^/subject_modify/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'subject_modify')), array (  '_controller' => 'UserBundle\\Controller\\DefaultController::subjectModifyAction',));
             }
 
+        }
+
+        // manage-cour
+        if ($pathinfo === '/manage-cour') {
+            return array (  '_controller' => 'UserBundle\\Controller\\UploadController::indexAction',  '_route' => 'manage-cour',);
+        }
+
+        // post_subject
+        if ($pathinfo === '/post_subject') {
+            return array (  '_controller' => 'UserBundle\\Controller\\UploadController::post_subjectAction',  '_route' => 'post_subject',);
+        }
+
+        // manage
+        if ($pathinfo === '/manage-cour') {
+            return array (  '_controller' => 'UserBundle\\Controller\\UploadController::manageAction',  '_route' => 'manage',);
+        }
+
+        // edit_cour
+        if ($pathinfo === '/edit_cour') {
+            return array (  '_controller' => 'UserBundle\\Controller\\UploadController::edit_courAction',  '_route' => 'edit_cour',);
+        }
+
+        // remove
+        if (0 === strpos($pathinfo, '/remove') && preg_match('#^/remove/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'remove')), array (  '_controller' => 'UserBundle\\Controller\\UploadController::removeAction',));
         }
 
         // homepage

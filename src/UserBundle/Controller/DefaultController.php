@@ -4,6 +4,8 @@ namespace UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use UserBundle\Form\UploadType;
+use UserBundle\Entity\coursupload;
 
 class DefaultController extends Controller
 {
@@ -90,11 +92,32 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/subject_modify", name="subject_modify")
+     * @Route("/subject_modify/{id}", name="subject_modify")
      */
-    public function subjectModifyAction()
+    public function subjectModifyAction($id)
     {
-        return $this->render('UserBundle:Studyview:.modify-cour.html.twig');
+        $cours = $this->getDoctrine()->getRepository(coursupload::class)->find($id);
+
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $form = $this->createForm(new UploadType(), $cours);
+
+        $request = $this->getRequest();
+        if($request->isMethod('POST')) {
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+                $a = $form->getData();
+                $a->upload();
+                $em->persist($a);
+                $em->flush();
+
+                return $this->redirect($this->generateUrl("manage-cour"));
+            }
+        }
+        return $this->render('UserBundle:Studyview:modify-cour.html.twig', array(
+            'form' =>$form->createView(),
+        ));
     }
     
 }

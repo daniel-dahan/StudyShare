@@ -15,8 +15,8 @@ class __TwigTemplate_87003bfe25d9e0f4c0c6f7af7e8814be2ab79ca2209bbdea44482a49067
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d3e91ceefe22925be3d173c67cebd76679ecdf6fb8596c0aba23b8f5cdefd162 = $this->env->getExtension("native_profiler");
-        $__internal_d3e91ceefe22925be3d173c67cebd76679ecdf6fb8596c0aba23b8f5cdefd162->enter($__internal_d3e91ceefe22925be3d173c67cebd76679ecdf6fb8596c0aba23b8f5cdefd162_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Studyview:teacher.html.twig"));
+        $__internal_460afd3f3e53b5678e2d1664cf436cb242365113f6899edabf6ca00563de897d = $this->env->getExtension("native_profiler");
+        $__internal_460afd3f3e53b5678e2d1664cf436cb242365113f6899edabf6ca00563de897d->enter($__internal_460afd3f3e53b5678e2d1664cf436cb242365113f6899edabf6ca00563de897d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "UserBundle:Studyview:teacher.html.twig"));
 
         // line 1
         echo "<!doctype html>
@@ -201,7 +201,7 @@ class __TwigTemplate_87003bfe25d9e0f4c0c6f7af7e8814be2ab79ca2209bbdea44482a49067
 <script src=\"js/materialize.min.js\"></script>
 </html>";
         
-        $__internal_d3e91ceefe22925be3d173c67cebd76679ecdf6fb8596c0aba23b8f5cdefd162->leave($__internal_d3e91ceefe22925be3d173c67cebd76679ecdf6fb8596c0aba23b8f5cdefd162_prof);
+        $__internal_460afd3f3e53b5678e2d1664cf436cb242365113f6899edabf6ca00563de897d->leave($__internal_460afd3f3e53b5678e2d1664cf436cb242365113f6899edabf6ca00563de897d_prof);
 
     }
 

@@ -1,15 +1,16 @@
-<!doctype html>
-<html lang="fr"><html lang="fr">
-<head>
+{% extends "::base.html.twig" %}
+
+{% block body %}
+{% block stylesheets %}
     <meta charset="UTF-8">
-    <title>StudyShare</title>
+{% block title %}Studyshare{% endblock %}
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-</head>
+{% endblock %}
 <body class="home-content">
 
 <header class="global-header">
@@ -94,8 +95,47 @@
         </div>
     </section>
 
+    {{ form_start(form, {'method': 'post', 'action': path('post_subject'), 'attr': {'enctype':
+        'multipart/form-data', 'class': 'container form-add-cour'}}) }}
 
-        <form action="" method="post" class="container form-add-cour">
+    <div class="input-field">
+    {{ form_widget(form.titre, {'attr': {'class': 'validate'}}) }}
+        <label for="title">Titre du cours</label>
+    </div>
+
+    <div class="input-field">
+        {{ form_widget(form.description, {'attr': {'class': 'materialize-textarea'}}) }}
+            <label for="title">Description du cours</label>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s4">
+        {{ form_widget(form.category, {'attr': {'class': 'validate'}}) }}
+        <option value="" disabled selected>Sélectionnez le niveau du cours</option>
+            </div>
+    </div>
+
+    <div class="file-field input-field">
+        <div class="btn">
+            <span>PDF</span>
+        </div>
+        <div class="file-path-wrapper">
+        {{ form_widget(form.file, {'attr': {'class': 'file-path validate'}}) }}
+        <input type="text" placeholder="Télécharger le PDF du cours">
+        </div>
+        </div>
+
+    <div class="input-field col s3">
+        <input type="submit" value="Publier le nouveau cours">
+    </div>
+
+    {{ form_end(form) }}
+
+
+
+
+       <!--  <form action="" enctype="multipart/form-data" method="post"
+              class="container form-add-cour">
             <div class="input-field">
                 <input id="title" type="text" class="validate" required>
                 <label for="title">Titre du cours</label>
@@ -106,7 +146,7 @@
                 <label for="description">Description du cours</label>
             </div>
 
-            <div class="row">
+             <div class="row">
                 <div class="input-field col s4">
                     <select required>
                         <option value="" disabled selected>Sélectionnez le niveau du cours</option>
@@ -156,7 +196,7 @@
                 <input type="submit" value="Publier le nouveau cours">
             </div>
 
-        </form>
+        </form> !-->
 
 
 </main>
@@ -178,3 +218,5 @@
 <script src="js/materialize.min.js"></script>
 <script src="js/custom.js"></script>
 </html>
+
+{% endblock %}

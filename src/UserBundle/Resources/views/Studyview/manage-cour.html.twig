@@ -1,3 +1,5 @@
+{% extends "::base.html.twig" %}
+{% block body %}
 <!doctype html>
 <html lang="fr">
 <head>
@@ -11,6 +13,8 @@
 
 </head>
 <body class="home-content">
+{% for coursupload in lecon %}
+
 
 <header class="global-header">
     <nav class="nav-wrapper">
@@ -98,9 +102,13 @@
             <li>
                 <article>
                     <div class="cour-infos">
-                        <h3 class="cour-title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque odio tempore ut</a></h3>
-                        <p class="cour-date"><i class="material-icons">today</i><span>Date de publication&nbsp;:</span> <time datetime="2016-03-20">20-03-2016</time></p>
-                        <p class="cour-category"><i class="material-icons">label</i><span>Niveau&nbsp:</span> Physique - L1</p>
+                        <h3 class="cour-title"><a href="#">{{ coursupload.titre }}</a></h3>
+                        <p class="cour-date"><i class="material-icons">today</i><span>Date de
+                                publication&nbsp;:</span> <time>{{ coursupload
+                                .date|date('d M Y') }}</time></p>
+                        <p class="cour-category"><i
+                                    class="material-icons">label</i><span>Niveau&nbsp:</span> {{
+                            coursupload.category }}</p>
                     </div>
                     <div class="cour-actions">
                         
@@ -111,55 +119,6 @@
                     </div>
                 </article>
             </li>
-            <li>
-                <article>
-                    <div class="cour-infos">
-                        <h3 class="cour-title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque odio tempore ut</a></h3>
-                        <p class="cour-date"><i class="material-icons">today</i><span>Date de publication&nbsp;:</span> <time datetime="2016-03-20">20-03-2016</time></p>
-                        <p class="cour-category"><i class="material-icons">label</i><span>Niveau&nbsp:</span> Physique - L1</p>
-                    </div>
-                    <div class="cour-actions">
-                        
-                        <p class="cour-actions-links">
-                            <a href="#" class="transition-hover">Modifier</a>
-                            <a href="#" class="transition-hover">Supprimer</a>
-                        </p>
-                    </div>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <div class="cour-infos">
-                        <h3 class="cour-title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque odio tempore ut</a></h3>
-                        <p class="cour-date"><i class="material-icons">today</i><span>Date de publication&nbsp;:</span> <time datetime="2016-03-20">20-03-2016</time></p>
-                        <p class="cour-category"><i class="material-icons">label</i><span>Niveau&nbsp:</span> Physique - L1</p>
-                    </div>
-                    <div class="cour-actions">
-                        
-                        <p class="cour-actions-links">
-                            <a href="#" class="transition-hover">Modifier</a>
-                            <a href="#" class="transition-hover">Supprimer</a>
-                        </p>
-                    </div>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <div class="cour-infos">
-                        <h3 class="cour-title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque odio tempore ut</a></h3>
-                        <p class="cour-date"><i class="material-icons">today</i><span>Date de publication&nbsp;:</span> <time datetime="2016-03-20">20-03-2016</time></p>
-                        <p class="cour-category"><i class="material-icons">label</i><span>Niveau&nbsp:</span> Physique - L1</p>
-                    </div>
-                    <div class="cour-actions">
-                        
-                        <p class="cour-actions-links">
-                            <a href="#" class="transition-hover">Modifier</a>
-                            <a href="#" class="transition-hover">Supprimer</a>
-                        </p>
-                    </div>
-                </article>
-            </li>
-
         </ul>
 
     </section>
@@ -181,3 +140,6 @@
 <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
 <script src="js/materialize.min.js"></script>
 </html>
+{% endfor %}
+
+{% endblock %}
