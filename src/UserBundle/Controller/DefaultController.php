@@ -90,11 +90,11 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/subject_modify", name="subject_modify")
+     * @Route("/subject_list", name="subject_list")
      */
-    public function subjectModifyAction()
+    public function subjectAction()
     {
-        return $this->render('UserBundle:Studyview:.modify-cour.html.twig');
+        return $this->render('UserBundle:Studyview:list-cours.html.twig');
     }
     
 }
