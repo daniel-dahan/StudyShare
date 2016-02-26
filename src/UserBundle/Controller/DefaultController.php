@@ -96,4 +96,5 @@ class DefaultController extends Controller
     {
         return $this->render('UserBundle:Studyview:.modify-cour.html.twig');
     }
+    
 }
